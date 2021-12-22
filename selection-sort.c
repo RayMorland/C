@@ -1,15 +1,23 @@
 #include <stdio.h>
 
+#define MAX 10
+int A[MAX];
+
 void SelectionSort(int A[], int n);
 
 int main()
 {
-    int length = 5;
-    int arr[5] = {5, 4, 3, 2, 1};
-    SelectionSort(arr, length);
-    for (int i = 0; i < length; i++)
+    int i, n;
+
+    printf("Please enter %d integers: \n", MAX);
+    for (n = 0; n < MAX && scanf("%d", &A[n]) != EOF; n++)
+        ;
+
+    SelectionSort(A, n);
+    printf("Sorted Nubmers: \n");
+    for (int i = 0; i < n; i++)
     {
-        printf("%u", arr[i]);
+        printf("%d\n", A[i]);
     }
     printf("\n");
 }
